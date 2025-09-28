@@ -1,0 +1,255 @@
+/* Header styles */
+.custom-header {
+  background-color: #000;
+  padding: 0 24px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header-text {
+  color: #fff;
+  font-size: 14px;
+}
+
+.header-links .link-text {
+  color: #fff;
+  font-size: 14px;
+}
+
+.header-links .link-text:hover {
+  text-decoration: underline;
+}
+
+/* Add future component styles below this comment */
+/* NewArrival section */
+.new-arrival-section {
+  padding: 32px; /* equivalent to p-8 */
+}
+
+.new-arrival-title {
+  margin-bottom: 16px; /* mb-4 */
+  font-weight: bold;
+}
+
+.product-card {
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.product-image {
+  height: 128px; /* h-32 */
+  background-color: #e5e7eb; /* gray-200 */
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.product-name {
+  display: block;
+}
+
+/* Navbar styles */
+.custom-navbar {
+  background-color: #fff;
+  padding: 0 24px;
+  border-bottom: 1px solid #e5e7eb; /* like Tailwind border-b */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.navbar-logo {
+  margin: 0;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-bottom: none;
+}
+
+.navbar-menu .ant-menu-item a {
+  font-size: 16px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search {
+  width: 200px;
+}
+
+/* HeroBanner styles */
+.hero-banner {
+  background-color: #f3f4f6; /* gray-100 */
+  padding: 32px; /* p-8 */
+}
+
+.hero-title {
+  font-weight: bold;
+  font-size: 32px; /* text-3xl */
+}
+
+.hero-subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.hero-button {
+  margin-top: 16px;
+  background-color: #dc2626; /* red-600 */
+  border: none;
+}
+
+.hero-button:hover {
+  background-color: #b91c1c;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+/* Footer styles */
+.custom-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 32px; /* p-8 */
+  margin-top: 32px; /* mt-8 */
+}
+
+.footer-title {
+  font-weight: bold;
+  margin-bottom: 8px; /* mb-2 */
+  color: #fff;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+.footer-copy {
+  color: #fff;
+  margin-top: 16px; /* mt-4 */
+}
+/* FlashSales styles */
+.flash-sales-section {
+  padding: 32px; /* p-8 */
+}
+
+.flash-sales-title {
+  font-weight: bold;
+  margin-bottom: 16px; /* mb-4 */
+}
+
+.flash-sales-card {
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.flash-sales-image {
+  height: 128px; /* h-32 */
+  background-color: #e5e7eb; /* gray-200 */
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.flash-sales-name {
+  margin: 8px 0;
+}
+
+.flash-sales-price {
+  color: #dc2626; /* red-600 */
+  font-weight: 500;
+}
+
+.flash-sales-old {
+  text-decoration: line-through;
+  color: #9ca3af; /* gray-400 */
+}
+/* ExploreProducts styles */
+.explore-products-section {
+  padding: 32px; /* p-8 */
+}
+
+.explore-products-title {
+  font-weight: bold;
+  margin-bottom: 16px; /* mb-4 */
+}
+
+.explore-products-card {
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.explore-products-image {
+  height: 128px; /* h-32 */
+  background-color: #e5e7eb; /* gray-200 */
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.explore-products-name {
+  display: block;
+}
+/* Categories styles */
+.categories-section {
+  padding: 32px; /* p-8 */
+}
+
+.categories-title {
+  font-weight: bold;
+  margin-bottom: 16px; /* mb-4 */
+}
+
+.categories-card {
+  text-align: center;
+  border-radius: 8px;
+  padding: 24px; /* p-6 */
+  transition: background-color 0.3s;
+}
+
+.categories-card:hover {
+  background-color: #fee2e2; /* red-50 */
+}
+/* BestSellers styles */
+.best-sellers-section {
+  padding: 32px; /* p-8 */
+}
+
+.best-sellers-title {
+  font-weight: bold;
+  margin-bottom: 16px; /* mb-4 */
+}
+
+.best-sellers-card {
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.best-sellers-image {
+  height: 128px; /* h-32 */
+  background-color: #e5e7eb; /* gray-200 */
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.best-sellers-name {
+  display: block;
+}
