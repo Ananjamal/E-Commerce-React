@@ -4,10 +4,10 @@ import { LeftOutlined, RightOutlined, HeartOutlined, EyeOutlined } from "@ant-de
 import "../assets/style.css";
 
 const products = [
-  { id: 1, name: "HAVIT HV-G92 Gamepad", price: 120, old: 160, discount: "-40%", rating: 88, img: "https://i.ibb.co/JQcZJqJ/gamepad.png" },
-  { id: 2, name: "AK-900 Wired Keyboard", price: 960, old: 1160, discount: "-35%", rating: 75, img: "https://i.ibb.co/ncY0QxX/keyboard.png" },
-  { id: 3, name: "IPS LCD Gaming Monitor", price: 370, old: 400, discount: "-30%", rating: 99, img: "https://i.ibb.co/tCJcLMk/monitor.png" },
-  { id: 4, name: "S-Series Comfort Chair", price: 375, old: 400, discount: "-25%", rating: 99, img: "https://i.ibb.co/GnFw1Hv/chair.png" },
+  { id: 1, name: "HAVIT HV-G92 Gamepad", price: 120, old: 160, discount: "-40%", rating: 88, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
+  { id: 2, name: "AK-900 Wired Keyboard", price: 960, old: 1160, discount: "-35%", rating: 75, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
+  { id: 3, name: "IPS LCD Gaming Monitor", price: 370, old: 400, discount: "-30%", rating: 99, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
+  { id: 4, name: "S-Series Comfort Chair", price: 375, old: 400, discount: "-25%", rating: 99, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
 ];
 
 const FlashSales = () => {

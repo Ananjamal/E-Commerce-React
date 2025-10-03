@@ -10,6 +10,9 @@ import Categories from "../components/Categories";
 import "../assets/style.css";
 import Banner from "../components/Banner";
 import ExplorProducts from "../components/ExplorProducts";
+import BestSellers from "../components/BestSellers";
+import NewArrival from "../components/NewArrival";
+import Footer from "../components/Footer";
 
 function Home() {
   const [visible, setVisible] = useState(false);
@@ -58,8 +61,11 @@ function Home() {
             <Categories />
           </Col>
           <Col xs={24}>
-            <ExplorProducts />
+            <BestSellers />
             <Banner />
+            <ExplorProducts />
+            <NewArrival />
+            <Footer />
           </Col>
         </Row>
       </div>

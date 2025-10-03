@@ -1,18 +1,74 @@
-import { Row, Col, Card, Typography, Button, Rate, Tag } from "antd";
-import { HeartOutlined, EyeOutlined } from "@ant-design/icons";
+import { Row, Col, Card, Typography, Button, Tag, Rate } from "antd";
+import { HeartOutlined, EyeOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "../assets/style.css";
 
 const { Title, Text } = Typography;
 
 const products = [
-  { id: 1, name: "The north coat", price: 260, oldPrice: 360, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
-  { id: 2, name: "Gucci duffle bag", price: 960, oldPrice: 1160, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
-  { id: 3, name: "RGB liquid CPU Cooler", price: 160, oldPrice: 170, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
-  { id: 4, name: "Small BookShelf", price: 360, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
+  { 
+    id: 1, 
+    name: "Breed Dry Dog Food", 
+    price: 100, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 35
+  },
+  { 
+    id: 2, 
+    name: "CANON EOS DSLR Camera", 
+    price: 360, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 95
+  },
+  { 
+    id: 3, 
+    name: "ASUS FHD Gaming Laptop", 
+    price: 700, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 325
+  },
+  { 
+    id: 4, 
+    name: "Curology Product Set", 
+    price: 500, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 145
+  },
+  { 
+    id: 5, 
+    name: "Kids Electric Car", 
+    price: 960, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 65
+  },
+  { 
+    id: 6, 
+    name: "Jr. Zoom Soccer Cleats", 
+    price: 160, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 35
+  },
+  { 
+    id: 7, 
+    name: "GPII Shooter USB Gamepad", 
+    price: 660, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 55
+  },
+  { 
+    id: 8, 
+    name: "Quilted Satin Jacket", 
+    price: 660, 
+    rating: 4, 
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    reviews: 55
+  },
 ];
 
 const ExplorProducts = () => {
@@ -21,11 +77,14 @@ const ExplorProducts = () => {
       {/* Header */}
       <div className="products-header-row">
         <Col>
-          <Tag color="red">This Month</Tag>
-          <Title level={2} className="products-title">Best Selling Products</Title>
+          <Tag color="red">Our Products</Tag>
+          <Title level={2} className="products-title">Explore Our Products</Title>
         </Col>
         <Col>
-          <Button type="primary" danger>View All</Button>
+          <div className="arrow-controls">
+            <Button shape="circle" icon={<LeftOutlined />} />
+            <Button shape="circle" icon={<RightOutlined />} />
+          </div>
         </Col>
       </div>
 
@@ -40,11 +99,8 @@ const ExplorProducts = () => {
               actions={[<HeartOutlined key="fav" />, <EyeOutlined key="view" />]}
             >
               <Text className="product-price">${product.price}</Text>
-              {product.oldPrice && (
-                <Text className="product-old-price" delete>${product.oldPrice}</Text>
-              )}
               <Rate disabled defaultValue={product.rating} className="product-rating" />
-              <Text type="secondary"> (65)</Text>
+              <Text type="secondary"> ({product.reviews})</Text>
               <Text className="product-name">{product.name}</Text>
             </Card>
           </Col>
