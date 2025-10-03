@@ -1,120 +1,99 @@
-import { Row, Col, Typography, Input, Button, Divider } from "antd";
+import React from "react";
+import { Row, Col, Input, Button, Typography } from "antd";
+import { MailOutlined } from "@ant-design/icons";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import "../assets/style.css";
 
 const { Title, Text } = Typography;
 
 const Footer = () => {
+  const socialIcons = [
+    { icon: FaFacebookF, link: "https://facebook.com" },
+    { icon: FaTwitter, link: "https://twitter.com" },
+    { icon: FaInstagram, link: "https://instagram.com" },
+    { icon: FaLinkedinIn, link: "https://linkedin.com" },
+  ];
+
   return (
-    <div className="footer-section">
-      {/* Exclusive Subscribe Section */}
-      <div className="subscribe-section">
-        <Row gutter={[24, 16]} align="middle">
-          <Col xs={24} md={4}>
-            <Title level={1} className="exclusive-title">Exclusive</Title>
-          </Col>
-          <Col xs={24} md={4}>
-            <Title level={2} className="subscribe-title">Subscribe</Title>
-          </Col>
-          <Col xs={24} md={6}>
-            <Text className="subscribe-text">Get 10% off your first order</Text>
-          </Col>
-          <Col xs={24} md={8}>
-            <div className="email-input-container">
-              <Input 
-                placeholder="Enter your email" 
-                className="email-input"
-              />
-              <Button type="primary" className="subscribe-btn">
-                →
-              </Button>
-            </div>
-          </Col>
-        </Row>
-      </div>
-
-      <Divider className="footer-divider" />
-
-      <Row gutter={[40, 40]} className="footer-content">
-        {/* Support Column */}
-        <Col xs={24} md={5}>
-          <Title level={4} className="footer-column-title">Support</Title>
-          <div className="footer-info">
-            <Text className="footer-address">
-              111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.
-            </Text>
-            <Text className="footer-contact">
-              exclusive@gmail.com
-            </Text>
-            <Text className="footer-contact">
-              +88015-88888-9999
-            </Text>
+    <div className="footer">
+      <Row gutter={[32, 32]}>
+        {/* Exclusive */}
+        <Col xs={24} sm={12} md={6}>
+          <Title level={4} className="footer-title">Exclusive</Title>
+          <Text className="footer-text-block">Subscribe</Text>
+          <Text className="footer-text-block footer-text-small">Get 10% off your first order</Text>
+          <div className="footer-subscribe">
+            <Input placeholder="Enter your email" className="footer-input" />
+            <Button type="primary" icon={<MailOutlined />} className="footer-btn" />
           </div>
         </Col>
 
-        {/* Account Column */}
-        <Col xs={24} md={5}>
-          <Title level={4} className="footer-column-title">Account</Title>
-          <div className="account-table">
-            <div className="table-row">
-              <Text className="table-cell">My Account</Text>
-              <Text className="table-cell">Privacy Policy</Text>
-            </div>
-            <div className="table-row">
-              <Text className="table-cell">Login / Register</Text>
-              <Text className="table-cell">Terms of Use</Text>
-            </div>
-            <div className="table-row">
-              <Text className="table-cell">Cart</Text>
-              <Text className="table-cell">FAQ</Text>
-            </div>
-            <div className="table-row">
-              <Text className="table-cell">Wishlist</Text>
-              <Text className="table-cell">Contact</Text>
-            </div>
-            <div className="table-row">
-              <Text className="table-cell">Shop</Text>
-              <Text className="table-cell"></Text>
-            </div>
-          </div>
+        {/* Support */}
+        <Col xs={24} sm={12} md={6}>
+          <Title level={4} className="footer-title">Support</Title>
+          <Text className="footer-text-block">111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh</Text>
+          <Text className="footer-text-block mt-8">exclusive@gmail.com</Text>
+          <Text className="footer-text-block mt-8">+88015-88888-9999</Text>
         </Col>
 
-        {/* Quick Link Column */}
-        <Col xs={24} md={4}>
-          <Title level={4} className="footer-column-title">Quick Link</Title>
-          <div className="quick-links">
-            <Text className="footer-link">Privacy Policy</Text>
-            <Text className="footer-link">Terms of Use</Text>
-            <Text className="footer-link">FAQ</Text>
-            <Text className="footer-link">Contact</Text>
-          </div>
+        {/* Account */}
+        <Col xs={24} sm={12} md={4}>
+          <Title level={4} className="footer-title">Account</Title>
+          {["My Account", "Login / Register", "Cart", "Wishlist", "Shop"].map((item, i) => (
+            <Text key={i} className="footer-text-block">{item}</Text>
+          ))}
         </Col>
 
-        {/* Download App Column */}
-        <Col xs={24} md={5}>
-          <Title level={4} className="footer-column-title">Download App</Title>
-          <div className="download-app">
-            <Text className="app-offer">Save $3 with App New User Only</Text>
-            <div className="app-stores">
-              <div className="app-store">Google Play</div>
-              <div className="app-store">Android Apps</div>
-              <div className="app-store">App Store</div>
+        {/* Quick Link */}
+        <Col xs={24} sm={12} md={4}>
+          <Title level={4} className="footer-title">Quick Link</Title>
+          {["Privacy Policy", "Terms Of Use", "FAQ", "Contact"].map((item, i) => (
+            <Text key={i} className="footer-text-block">{item}</Text>
+          ))}
+        </Col>
+
+        {/* Download App */}
+        <Col xs={24} sm={12} md={4}>
+          <Title level={4} className="footer-title">Download App</Title>
+          <Text className="footer-text-block footer-text-small">Save $3 with App New User Only</Text>
+          <div className="footer-app">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/30/QR_code_for_mobile_English_Wikipedia.svg"
+              alt="QR Code"
+              className="footer-qr"
+            />
+            <div>
+              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  className="footer-badge"
+                />
+              </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store"
+                  className="footer-badge"
+                />
+              </a>
             </div>
           </div>
-        </Col>
 
-        {/* Empty Column for 5th column */}
-        <Col xs={24} md={5}>
-          {/* Empty column for spacing or additional content */}
+          {/* Social Icons */}
+          <div className="footer-social">
+            {socialIcons.map(({ icon: Icon, link }, i) => (
+              <a key={i} href={link} target="_blank" rel="noopener noreferrer" className="footer-social-icon">
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
         </Col>
       </Row>
 
-      <Divider className="footer-divider" />
-
       {/* Copyright */}
-      <div className="copyright-section">
-        <Text className="copyright-text">
-          © Copyright Rimel 2022. All right reserved.
-        </Text>
+      <div className="footer-copyright">
+        <Text>© Copyright Rimel 2022. All rights reserved</Text>
       </div>
     </div>
   );
