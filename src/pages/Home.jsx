@@ -65,10 +65,10 @@ function Home() {
             <Banner />
             <ExplorProducts />
             <NewArrival />
-            <Footer />
           </Col>
         </Row>
       </div>
+      <Footer />
     </>
   );
 }
