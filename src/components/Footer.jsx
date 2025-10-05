@@ -14,12 +14,12 @@ const { Footer: AntFooter } = Layout;
 
 const Footer = () => (
   <AntFooter className="footer-container">
-    <Row gutter={[16, 40]} justify="space-between" className="footer-row">
+    <Row gutter={[0, 30]} justify="space-between" className="footer-row">
+      
       {/* Exclusive */}
       <Col xs={24} sm={12} md={6} lg={5}>
         <Title level={4} className="footer-heading">Exclusive</Title>
-        <Text className="footer-text">Subscribe</Text>
-        <Text className="footer-text">Get 10% off your first order</Text>
+        <Text className="footer-text">Subscribe & Get 10% Off Your First Order</Text>
         <Input
           placeholder="Enter your email"
           className="footer-input"
@@ -38,8 +38,8 @@ const Footer = () => (
       <Col xs={24} sm={12} md={6} lg={5}>
         <Title level={4} className="footer-heading">Support</Title>
         <Space direction="vertical" size={4}>
-          <Text className="footer-text">111 Bijoy sarani, Dhaka,</Text>
-          <Text className="footer-text">DH 1515, Bangladesh.</Text>
+          <Text className="footer-text">111 Bijoy Sarani, Dhaka,</Text>
+          <Text className="footer-text">DH 1515, Bangladesh</Text>
           <Text className="footer-text">exclusive@gmail.com</Text>
           <Text className="footer-text">+88015-8888-9999</Text>
         </Space>
@@ -71,7 +71,7 @@ const Footer = () => (
       {/* Download App */}
       <Col xs={24} sm={12} md={6} lg={4}>
         <Title level={4} className="footer-heading">Download App</Title>
-        <Text className="footer-text">Save $3 with App New User Only</Text>
+        <Text className="footer-text">Save $3 for new users only</Text>
 
         <div className="app-download">
           <div className="qr-box">
@@ -82,34 +82,27 @@ const Footer = () => (
           </div>
           <div className="store-links">
             <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Get it on Google Play"
-              />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" />
             </a>
             <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="Download on the App Store"
-              />
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" />
             </a>
           </div>
         </div>
 
-        <Space size="large">
-          <Button type="link" href="#" icon={<FacebookFilled />} className="footer-icon" aria-label="Facebook" />
-          <Button type="link" href="#" icon={<TwitterOutlined />} className="footer-icon" aria-label="Twitter" />
-          <Button type="link" href="#" icon={<InstagramFilled />} className="footer-icon" aria-label="Instagram" />
-          <Button type="link" href="#" icon={<LinkedinFilled />} className="footer-icon" aria-label="LinkedIn" />
+        <Space size="large" className="social-icons">
+          <Button type="link" icon={<FacebookFilled />} className="footer-icon" />
+          <Button type="link" icon={<TwitterOutlined />} className="footer-icon" />
+          <Button type="link" icon={<InstagramFilled />} className="footer-icon" />
+          <Button type="link" icon={<LinkedinFilled />} className="footer-icon" />
         </Space>
       </Col>
     </Row>
 
     <div className="footer-divider" />
     <div className="footer-bottom">
-  <Text style={{ color: 'white' }}>© Copyright Rimel 2022. All right reserved</Text>
-</div>
-
+      <Text>© Copyright Rimel 2022. All rights reserved</Text>
+    </div>
   </AntFooter>
 );
 

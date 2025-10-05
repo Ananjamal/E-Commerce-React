@@ -10,7 +10,7 @@ const products = [
     name: "Breed Dry Dog Food", 
     price: 100, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 35
   },
   { 
@@ -18,7 +18,7 @@ const products = [
     name: "CANON EOS DSLR Camera", 
     price: 360, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 95
   },
   { 
@@ -26,7 +26,7 @@ const products = [
     name: "ASUS FHD Gaming Laptop", 
     price: 700, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 325
   },
   { 
@@ -34,7 +34,7 @@ const products = [
     name: "Curology Product Set", 
     price: 500, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 145
   },
   { 
@@ -42,7 +42,7 @@ const products = [
     name: "Kids Electric Car", 
     price: 960, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 65
   },
   { 
@@ -50,7 +50,7 @@ const products = [
     name: "Jr. Zoom Soccer Cleats", 
     price: 160, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 35
   },
   { 
@@ -58,7 +58,7 @@ const products = [
     name: "GPII Shooter USB Gamepad", 
     price: 660, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 55
   },
   { 
@@ -66,7 +66,7 @@ const products = [
     name: "Quilted Satin Jacket", 
     price: 660, 
     rating: 4, 
-    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
     reviews: 55
   },
 ];

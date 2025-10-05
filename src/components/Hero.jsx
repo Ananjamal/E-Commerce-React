@@ -14,7 +14,7 @@ const Hero = () => (
       </Col>
       <Col xs={24} md={12} className="hero-image-container">
         <img
-          src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
+          src="https://www.gadgetpilipinas.net/wp-content/uploads/2022/09/Apple-iPhone-14-Pro-and-Pro-Max-banner-770x433.jpg"
           alt="iPhone 14"
           className="hero-image"
         />

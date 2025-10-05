@@ -37,7 +37,7 @@ const Banner = () => {
       {/* Right Side */}
       <Col className="banner-right" xs={24} md={12}>
         <img
-          src="https://cdn.thewirecutter.com/wp-content/media/2024/03/computer-speaker-2048px-3550.jpg"
+          src="https://e0.pxfuel.com/wallpapers/364/706/desktop-wallpaper-the-jbl-charge-3-is-an-excellent-bluetooth-speaker-jbl.jpg"
           alt="JBL Boombox 3"
         />
       </Col>
