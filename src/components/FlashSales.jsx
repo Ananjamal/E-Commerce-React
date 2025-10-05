@@ -1,26 +1,89 @@
 import React from "react";
-import { Row, Col, Button, Card } from "antd";
-import { LeftOutlined, RightOutlined, HeartOutlined, EyeOutlined } from "@ant-design/icons";
+import { Row, Col, Card, Typography, Button, Tag } from "antd";
+import {
+  LeftOutlined,
+  RightOutlined,
+  HeartOutlined,
+  EyeOutlined,
+} from "@ant-design/icons";
+const { Title, Text } = Typography;
+
 import "../assets/style.css";
 
 const products = [
-  { id: 1, name: "HAVIT HV-G92 Gamepad", price: 120, old: 160, discount: "-40%", rating: 88, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
-  { id: 2, name: "AK-900 Wired Keyboard", price: 960, old: 1160, discount: "-35%", rating: 75, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
-  { id: 3, name: "IPS LCD Gaming Monitor", price: 370, old: 400, discount: "-30%", rating: 99, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
-  { id: 4, name: "S-Series Comfort Chair", price: 375, old: 400, discount: "-25%", rating: 99, img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg" },
+  {
+    id: 1,
+    name: "HAVIT HV-G92 Gamepad",
+    price: 120,
+    old: 160,
+    discount: "-40%",
+    rating: 88,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
+  {
+    id: 2,
+    name: "AK-900 Wired Keyboard",
+    price: 960,
+    old: 1160,
+    discount: "-35%",
+    rating: 75,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
+  {
+    id: 3,
+    name: "IPS LCD Gaming Monitor",
+    price: 370,
+    old: 400,
+    discount: "-30%",
+    rating: 99,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
+  {
+    id: 4,
+    name: "S-Series Comfort Chair",
+    price: 375,
+    old: 400,
+    discount: "-25%",
+    rating: 99,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
 ];
 
 const FlashSales = () => {
   return (
     <div className="flashsales-section">
       <div className="flashsales-header">
-        <p className="section-subtitle">Today's</p>
-        <h2 className="section-title">Flash Sales</h2>
+        <Col>
+          {/* Container for Red Block and "Today's" text */}
+          <div className="flashsales-top">
+            <div className="red-block" />
+            <Title level={5} className="todays-text">
+              Today's
+            </Title>
+          </div>
+
+          {/* "Flash Sales" text */}
+          <Title level={2} className="flashsales-title">
+            Flash Sales
+          </Title>
+        </Col>
         <div className="countdown">
-          <div><span>03</span><p>Days</p></div>
-          <div><span>23</span><p>Hours</p></div>
-          <div><span>19</span><p>Minutes</p></div>
-          <div><span>56</span><p>Seconds</p></div>
+          <div>
+            <span>03</span>
+            <p>Days</p>
+          </div>
+          <div>
+            <span>23</span>
+            <p>Hours</p>
+          </div>
+          <div>
+            <span>19</span>
+            <p>Minutes</p>
+          </div>
+          <div>
+            <span>56</span>
+            <p>Seconds</p>
+          </div>
         </div>
         <div className="arrow-controls">
           <Button shape="circle" icon={<LeftOutlined />} />
@@ -34,7 +97,9 @@ const FlashSales = () => {
             <Card
               hoverable
               className="product-card"
-              cover={<img src={item.img} alt={item.name} className="product-img" />}
+              cover={
+                <img src={item.img} alt={item.name} className="product-img" />
+              }
               actions={[
                 <HeartOutlined key="fav" />,
                 <EyeOutlined key="view" />,
@@ -51,9 +116,10 @@ const FlashSales = () => {
           </Col>
         ))}
       </Row>
-      <div className="center-btn">
+      <div>
         <Button className="view-all-btn">View All Products</Button>
       </div>
+      <hr />
     </div>
   );
 };

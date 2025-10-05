@@ -5,14 +5,37 @@ import "../assets/style.css";
 const { Title, Text } = Typography;
 
 const products = [
-  { id: 1, name: "The north coat", price: 260, oldPrice: 360, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
-  { id: 2, name: "Gucci duffle bag", price: 960, oldPrice: 1160, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
-  { id: 3, name: "RGB liquid CPU Cooler", price: 160, oldPrice: 170, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
-  { id: 4, name: "Small BookShelf", price: 360, rating: 4,     img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg"
- },
+  {
+    id: 1,
+    name: "The north coat",
+    price: 260,
+    oldPrice: 360,
+    rating: 4,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
+  {
+    id: 2,
+    name: "Gucci duffle bag",
+    price: 960,
+    oldPrice: 1160,
+    rating: 4,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
+  {
+    id: 3,
+    name: "RGB liquid CPU Cooler",
+    price: 160,
+    oldPrice: 170,
+    rating: 4,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
+  {
+    id: 4,
+    name: "Small BookShelf",
+    price: 360,
+    rating: 4,
+    img: "https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907_inline.jpg.large.jpg",
+  },
 ];
 
 const BestSellers = () => {
@@ -21,11 +44,23 @@ const BestSellers = () => {
       {/* Header */}
       <div className="products-header-row">
         <Col>
-          <Tag color="red">This Month</Tag>
-          <Title level={2} className="products-title">Best Selling Products</Title>
+          {/* Container for Red Block and "Today's" text */}
+          <div className="flashsales-top">
+            <div className="red-block" />
+            <Title level={5} className="todays-text">
+              Best Sellers
+            </Title>
+          </div>
+
+          {/* "Flash Sales" text */}
+          <Title level={2} className="flashsales-title">
+            Best Selling Products
+          </Title>
         </Col>
         <Col>
-          <Button type="primary" danger>View All</Button>
+          <Button type="primary" danger>
+            View All
+          </Button>
         </Col>
       </div>
 
@@ -37,13 +72,22 @@ const BestSellers = () => {
               hoverable
               className="product-card"
               cover={<img alt={product.name} src={product.img} />}
-              actions={[<HeartOutlined key="fav" />, <EyeOutlined key="view" />]}
+              actions={[
+                <HeartOutlined key="fav" />,
+                <EyeOutlined key="view" />,
+              ]}
             >
               <Text className="product-price">${product.price}</Text>
               {product.oldPrice && (
-                <Text className="product-old-price" delete>${product.oldPrice}</Text>
+                <Text className="product-old-price" delete>
+                  ${product.oldPrice}
+                </Text>
               )}
-              <Rate disabled defaultValue={product.rating} className="product-rating" />
+              <Rate
+                disabled
+                defaultValue={product.rating}
+                className="product-rating"
+              />
               <Text type="secondary"> (65)</Text>
               <Text className="product-name">{product.name}</Text>
             </Card>

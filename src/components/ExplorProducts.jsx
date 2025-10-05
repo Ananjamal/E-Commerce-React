@@ -75,16 +75,26 @@ const ExplorProducts = () => {
   return (
     <div className="products-section">
       {/* Header */}
-      <div className="products-header-row">
+       <div className="products-header-row">
         <Col>
-          <Tag color="red">Our Products</Tag>
-          <Title level={2} className="products-title">Explore Our Products</Title>
+          {/* Container for Red Block and "Today's" text */}
+          <div className="flashsales-top">
+            <div className="red-block" />
+            <Title level={5} className="todays-text">
+              Our Products
+              </Title>
+          </div>
+
+          {/* "Flash Sales" text */}
+          <Title level={2} className="flashsales-title">
+              Expolre Our Products
+
+          </Title>
         </Col>
         <Col>
-          <div className="arrow-controls">
-            <Button shape="circle" icon={<LeftOutlined />} />
-            <Button shape="circle" icon={<RightOutlined />} />
-          </div>
+          <Button type="primary" danger>
+            View All
+          </Button>
         </Col>
       </div>
 

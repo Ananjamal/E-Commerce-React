@@ -1,5 +1,11 @@
 import React from "react";
-import { Card, Row, Col } from "antd";
+import { Row, Col, Card, Typography, Button } from "antd";
+import {
+  LeftOutlined,
+  RightOutlined,
+
+} from "@ant-design/icons";
+const { Title, Text } = Typography;
 import { MobileOutlined, DesktopOutlined, CameraOutlined } from "@ant-design/icons";
 import { FaGamepad, FaClock, FaHeadphones } from "react-icons/fa";  // ✅ use FaHeadphones instead
 import "../assets/style.css";
@@ -15,9 +21,27 @@ const categories = [
 
 const Categories = () => (
   <div className="categories-section">
-    <p className="section-subtitle">Categories</p>
-    <h2 className="section-title">Browse By Category</h2>
+    <div className="flashsales-header">
+        <Col>
+          {/* Container for Red Block and "Today's" text */}
+          <div className="flashsales-top">
+            <div className="red-block" />
+            <Title level={5} className="todays-text">
+              Categories
+            </Title>
+          </div>
 
+          {/* "Flash Sales" text */}
+          <Title level={2} className="flashsales-title">
+            Browse by Category
+          </Title>
+        </Col>
+       
+        <div className="arrow-controls">
+          <Button shape="circle" icon={<LeftOutlined />} />
+          <Button shape="circle" icon={<RightOutlined />} />
+        </div>
+      </div>
     <Row gutter={[16, 16]} justify="center">
       {categories.map((cat) => (
         <Col xs={12} sm={8} md={4} key={cat.id}>

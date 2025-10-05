@@ -1,138 +1,137 @@
-import { Row, Col, Card, Typography, Button, Tag } from "antd";
-
+import React from 'react';
+import { Row, Col, Typography, Button } from 'antd';
+// Import the separate CSS file
 import "../assets/style.css";
+// Use AntD icons for the service section
+import { TruckOutlined, CustomerServiceOutlined, DollarOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 
-const NewArrival = () => {
+// --- Helper Components for Clarity ---
+
+const FeaturedCard = ({ title, description, className, isSmall = false }) => (
+  <div className={`featured-card ${className} ${isSmall ? 'small' : ''}`}>
+    <div className="card-content">
+      <Title level={isSmall ? 5 : 4} className="card-title">{title}</Title>
+      <Text className="card-description">{description}</Text>
+      <div className="shop-now-container">
+        <Button type="text" className="shop-now-button">Shop Now</Button>
+      </div>
+    </div>
+  </div>
+);
+
+const ServiceCard = ({ icon: Icon, title, details }) => (
+  <div className="service-card">
+    <div className="service-icon"><Icon /></div>
+    <Title level={5} className="service-title">{title}</Title>
+    <Text className="service-details">{details}</Text>
+  </div>
+);
+
+
+// --- Main Component ---
+
+const NewArrivalsPage = () => {
   return (
-    <div className="new-arrival-section">
-      {/* Main Featured Section */}
+    <div className="page-container">
+      
+      {/* Header Section */}
       <div className="products-header-row">
         <Col>
-          <Tag color="red">Featured</Tag>
-          <Title level={2} className="products-title">New Arrival</Title>
+          {/* Container for Red Block and "Today's" text */}
+          <div className="flashsales-top">
+            <div className="red-block" />
+            <Title level={5} className="todays-text">
+              Featured
+            </Title>
+          </div>
+
+          {/* "Flash Sales" text */}
+          <Title level={2} className="flashsales-title">
+            New Arrivals
+          </Title>
         </Col>
-       
+        
       </div>
-      <Row gutter={[30, 30]} style={{ marginBottom: 80 }}>
-        {/* PlayStation 5 - Main Card */}
+
+
+      {/* Main Grid Layout (AntD Row/Col) */}
+      <Row gutter={[24, 24]} className="main-grid">
+        
+        {/* Left Side: PlayStation 5 (Large Block) */}
         <Col xs={24} lg={12}>
-          <Card 
-            className="featured-card main-card ps5-bg"
-            bodyStyle={{ padding: '40px', height: '500px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-          >
-            <div className="card-content">
-              <Text className="featured-badge">PlayStation 5</Text>
-              <Title level={1} className="featured-title">
-                Black and White version of the PS5 coming out on sale.
-              </Title>
-              <Button className="shop-now-btn" size="large">
-                Shop Now
-              </Button>
-            </div>
-          </Card>
+          <FeaturedCard 
+            title="PlayStation 5"
+            description="Black and White version of the PS5 coming out on sale."
+            className="ps5-card"
+          />
         </Col>
 
-        {/* Right Side Cards */}
+        {/* Right Side: 3 Stacked Blocks */}
         <Col xs={24} lg={12}>
-          <Row gutter={[30, 30]} style={{ height: '100%' }}>
-            {/* Women's Collections */}
-            <Col xs={24}>
-              <Card 
-                className="featured-card women-bg"
-                bodyStyle={{ padding: '30px', height: '235px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-              >
-                <div className="card-content">
-                  <Text className="featured-badge">Women's Collections</Text>
-                  <Title level={2} className="side-card-title">
-                    Featured woman collections that give you another vibe.
-                  </Title>
-                  <Button className="shop-now-btn">
-                    Shop Now
-                  </Button>
-                </div>
-              </Card>
+          <Row gutter={[24, 24]}>
+            {/* Women's Collections (Top-Right Large Block) */}
+            <Col span={24}>
+              <FeaturedCard 
+                title="Women's Collections"
+                description="Featured woman collections that give you another vibe."
+                className="women-card"
+              />
             </Col>
-
-            {/* Bottom Small Cards */}
-            <Col xs={24}>
-              <Row gutter={[30, 30]}>
-                {/* Speakers */}
-                <Col xs={12}>
-                  <Card 
-                    className="featured-card speakers-bg"
-                    bodyStyle={{ padding: '25px', height: '235px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                  >
-                    <div className="card-content">
-                      <Text className="featured-badge">Speakers</Text>
-                      <Title level={3} className="small-card-title">
-                        Amazon wireless speakers
-                      </Title>
-                      <Button className="shop-now-btn">
-                        Shop Now
-                      </Button>
-                    </div>
-                  </Card>
-                </Col>
-
-                {/* Perfume */}
-                <Col xs={12}>
-                  <Card 
-                    className="featured-card perfume-bg"
-                    bodyStyle={{ padding: '25px', height: '235px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                  >
-                    <div className="card-content">
-                      <Text className="featured-badge">Perfume</Text>
-                      <Title level={3} className="small-card-title">
-                        GUCCI INTENSE OUD
-                      </Title>
-                      <Button className="shop-now-btn">
-                        Shop Now
-                      </Button>
-                    </div>
-                  </Card>
-                </Col>
-              </Row>
+            
+            {/* Speakers (Bottom-Left Small Block) */}
+            <Col xs={24} sm={12}>
+              <FeaturedCard 
+                title="Speakers"
+                description="Amazon wireless speakers"
+                className="speakers-card"
+                isSmall={true}
+              />
+            </Col>
+            
+            {/* Perfume (Bottom-Right Small Block) */}
+            <Col xs={24} sm={12}>
+              <FeaturedCard 
+                title="Perfume"
+                description="GUCCI INTENSE OUD EDP"
+                className="perfume-card"
+                isSmall={true}
+              />
             </Col>
           </Row>
         </Col>
       </Row>
 
       {/* Services Section */}
-      <Row gutter={[60, 40]} justify="center" className="services-section">
-        <Col xs={24} md={8}>
-          <div className="service-item">
-            <div className="service-icon">🚚</div>
-            <Title level={4} className="service-title">FREE AND FAST DELIVERY</Title>
-            <Text className="service-description">
-              Free delivery for all orders over $140
-            </Text>
-          </div>
-        </Col>
+      <div className="services-section">
+        <Row justify="center" gutter={40} className="services-row">
+          <Col xs={24} md={8}>
+            <ServiceCard 
+              icon={TruckOutlined}
+              title="FREE AND FAST DELIVERY"
+              details="Free delivery for all orders over $140"
+            />
+          </Col>
+          <Col xs={24} md={8}>
+            <ServiceCard 
+              icon={CustomerServiceOutlined}
+              title="24/7 CUSTOMER SERVICE"
+              details="Friendly 24/7 customer support"
+            />
+          </Col>
+          <Col xs={24} md={8}>
+            <ServiceCard 
+              icon={DollarOutlined}
+              title="MONEY BACK GUARANTEE"
+              details="We return money within 30 days"
+            />
+          </Col>
+        </Row>
+      </div>
 
-        <Col xs={24} md={8}>
-          <div className="service-item">
-            <div className="service-icon">💬</div>
-            <Title level={4} className="service-title">24/7 CUSTOMER SERVICE</Title>
-            <Text className="service-description">
-              Friendly 24/7 customer support
-            </Text>
-          </div>
-        </Col>
-
-        <Col xs={24} md={8}>
-          <div className="service-item">
-            <div className="service-icon">🛡️</div>
-            <Title level={4} className="service-title">MONEY BACK GUARANTEE</Title>
-            <Text className="service-description">
-              We return money within 30 days
-            </Text>
-          </div>
-        </Col>
-      </Row>
     </div>
   );
 };
 
-export default NewArrival;
+export default NewArrivalsPage;

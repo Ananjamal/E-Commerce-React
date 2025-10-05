@@ -59,12 +59,19 @@ function Home() {
           <Col xs={24}>
             <FlashSales />
             <Categories />
+               <hr />
           </Col>
+
           <Col xs={24}>
             <BestSellers />
             <Banner />
+              
+
             <ExplorProducts />
+             
+
             <NewArrival />
+            
           </Col>
         </Row>
       </div>
