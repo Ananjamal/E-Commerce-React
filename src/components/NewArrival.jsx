@@ -36,10 +36,8 @@ const NewArrivalsPage = () => {
   return (
     <div className="page-container">
       
-      {/* Header Section */}
       <div className="products-header-row">
         <Col>
-          {/* Container for Red Block and "Today's" text */}
           <div className="flashsales-top">
             <div className="red-block" />
             <Title level={5} className="todays-text">
@@ -47,7 +45,6 @@ const NewArrivalsPage = () => {
             </Title>
           </div>
 
-          {/* "Flash Sales" text */}
           <Title level={2} className="flashsales-title">
             New Arrivals
           </Title>
@@ -56,10 +53,8 @@ const NewArrivalsPage = () => {
       </div>
 
 
-      {/* Main Grid Layout (AntD Row/Col) */}
       <Row gutter={[24, 24]} className="main-grid">
         
-        {/* Left Side: PlayStation 5 (Large Block) */}
         <Col xs={24} lg={12}>
           <FeaturedCard 
             title="PlayStation 5"
@@ -68,10 +63,8 @@ const NewArrivalsPage = () => {
           />
         </Col>
 
-        {/* Right Side: 3 Stacked Blocks */}
         <Col xs={24} lg={12}>
           <Row gutter={[24, 24]}>
-            {/* Women's Collections (Top-Right Large Block) */}
             <Col span={24}>
               <FeaturedCard 
                 title="Women's Collections"
@@ -80,7 +73,6 @@ const NewArrivalsPage = () => {
               />
             </Col>
             
-            {/* Speakers (Bottom-Left Small Block) */}
             <Col xs={24} sm={12}>
               <FeaturedCard 
                 title="Speakers"
@@ -90,7 +82,6 @@ const NewArrivalsPage = () => {
               />
             </Col>
             
-            {/* Perfume (Bottom-Right Small Block) */}
             <Col xs={24} sm={12}>
               <FeaturedCard 
                 title="Perfume"
@@ -103,7 +94,6 @@ const NewArrivalsPage = () => {
         </Col>
       </Row>
 
-      {/* Services Section */}
       <div className="services-section">
         <Row justify="center" gutter={40} className="services-row">
           <Col xs={24} md={8}>

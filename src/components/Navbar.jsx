@@ -7,12 +7,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Row justify="space-between" align="middle" className="navbar-container">
-        {/* Logo */}
         <Col xs={24} lg={4}>
           <h1 className="navbar-title">Exclusive</h1>
         </Col>
 
-        {/* Menu visible on all screens */}
         <Col xs={24} lg={12}>
           <Menu
             mode="horizontal"
@@ -26,7 +24,6 @@ const Navbar = () => {
           </Menu>
         </Col>
 
-        {/* Search + Icons */}
         <Col xs={24} lg={8}>
           <Row gutter={12} justify="end" align="middle">
             <Col flex="auto">

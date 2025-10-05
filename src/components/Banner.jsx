@@ -6,14 +6,12 @@ const { Title, Text } = Typography;
 const Banner = () => {
   return (
     <Row className="banner">
-      {/* Left Side */}
       <Col className="banner-left" xs={24} md={12}>
         <Text className="category-text">Categories</Text>
         <Title level={1} className="banner-title">
           Enhance Your Music Experience
         </Title>
 
-        {/* Countdown */}
         <div className="banner-countdown">
           <div className="count-card">
             <span>23</span>Hours
@@ -34,7 +32,6 @@ const Banner = () => {
         </Button>
       </Col>
 
-      {/* Right Side */}
       <Col className="banner-right" xs={24} md={12}>
         <img
           src="https://e0.pxfuel.com/wallpapers/364/706/desktop-wallpaper-the-jbl-charge-3-is-an-excellent-bluetooth-speaker-jbl.jpg"

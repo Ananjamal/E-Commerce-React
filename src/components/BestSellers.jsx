@@ -41,10 +41,8 @@ const products = [
 const BestSellers = () => {
   return (
     <div className="products-section">
-      {/* Header */}
       <div className="products-header-row">
         <Col>
-          {/* Container for Red Block and "Today's" text */}
           <div className="flashsales-top">
             <div className="red-block" />
             <Title level={5} className="todays-text">
@@ -52,7 +50,6 @@ const BestSellers = () => {
             </Title>
           </div>
 
-          {/* "Flash Sales" text */}
           <Title level={2} className="flashsales-title">
             Best Selling Products
           </Title>
@@ -64,7 +61,6 @@ const BestSellers = () => {
         </Col>
       </div>
 
-      {/* Products Grid */}
       <Row gutter={[16, 16]}>
         {products.map((product) => (
           <Col xs={24} sm={12} md={12} lg={6} key={product.id}>

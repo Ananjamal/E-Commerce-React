@@ -16,7 +16,6 @@ const Footer = () => (
   <AntFooter className="footer-container">
     <Row gutter={[0, 30]} justify="space-between" className="footer-row">
       
-      {/* Exclusive */}
       <Col xs={24} sm={12} md={6} lg={5}>
         <Title level={4} className="footer-heading">Exclusive</Title>
         <Text className="footer-text">Subscribe & Get 10% Off Your First Order</Text>
@@ -34,7 +33,6 @@ const Footer = () => (
         />
       </Col>
 
-      {/* Support */}
       <Col xs={24} sm={12} md={6} lg={5}>
         <Title level={4} className="footer-heading">Support</Title>
         <Space direction="vertical" size={4}>
@@ -45,7 +43,6 @@ const Footer = () => (
         </Space>
       </Col>
 
-      {/* Account */}
       <Col xs={24} sm={12} md={6} lg={5}>
         <Title level={4} className="footer-heading">Account</Title>
         <Space direction="vertical" size={12}>
@@ -57,7 +54,6 @@ const Footer = () => (
         </Space>
       </Col>
 
-      {/* Quick Link */}
       <Col xs={24} sm={12} md={6} lg={5}>
         <Title level={4} className="footer-heading">Quick Link</Title>
         <Space direction="vertical" size={12}>
@@ -68,7 +64,6 @@ const Footer = () => (
         </Space>
       </Col>
 
-      {/* Download App */}
       <Col xs={24} sm={12} md={6} lg={4}>
         <Title level={4} className="footer-heading">Download App</Title>
         <Text className="footer-text">Save $3 for new users only</Text>
