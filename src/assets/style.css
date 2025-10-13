@@ -988,3 +988,481 @@
     margin-bottom: 10px;
   }
 }
+
+
+
+
+
+/* ---------------------- */
+
+/* General Setup and Wrapper */
+.login-wrapper {
+  /* Set a min-height for the main content area, minus header/footer heights */
+  min-height: calc(100vh - 120px); 
+  padding: 0; 
+  display: flex; /* Enables flex context for vertical height control */
+  align-items: stretch; /* Crucial: Allows children (Row) to fill the height */
+}
+
+.login-row {
+  width: 100%; 
+  margin: 0 auto;
+  /* Crucial: Ensure the row itself occupies the entire height of the wrapper */
+  height: 100%; 
+  max-width: 1500px; 
+  margin-top: 20px;
+}
+
+/* --- Left Image Section: FULL HEIGHT/WIDTH --- */
+.login-left {
+  /* Crucial: Ensure the left column takes up the full available height */
+  height: 100%;
+  padding: 0; 
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.login-left-image {
+  /* Crucial: Make the image fill the entire height AND width of its parent Col */
+  width: 100%;
+  height: 500px; 
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block; 
+}
+
+
+/* --- Right Form Section --- */
+.login-right {
+  display: flex;
+  justify-content: center; 
+  align-items: center; /* Vertically centers the form content */
+  padding: 40px; 
+  height: 100%; /* Takes full height to ensure vertical centering works */
+}
+
+/* ... (Remaining form and general styles below are the same) ... */
+
+.login-form-box {
+  width: 100%; 
+  max-width: 380px; 
+}
+
+.login-title {
+  font-size: 30px !important; 
+  font-weight: 700 !important; 
+  margin-bottom: 10px !important; 
+}
+
+.login-subtitle {
+  display: block; 
+  margin-bottom: 35px !important; 
+  color: #6c757d !important; 
+  font-size: 16px !important;
+}
+
+.login-form .ant-form-item {
+  margin-bottom: 40px !important; 
+}
+
+.login-input.ant-input,
+.login-input.ant-input-password {
+  border: none !important; 
+  border-bottom: 1px solid #ced4da !important; 
+  border-radius: 0 !important; 
+  box-shadow: none !important; 
+  padding: 10px 0 !important; 
+  font-size: 16px !important;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 10px; 
+}
+
+.login-btn.ant-btn {
+  background-color: #db4444 !important; 
+  border-color: #db4444 !important;
+  color: #ffffff !important;
+  height: 48px; 
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.forgot-password {
+  color: #db4444 !important; 
+  font-size: 16px;
+  font-weight: 500; 
+  text-decoration: none; 
+}
+
+@media (max-width: 992px) { 
+  .login-wrapper {
+    min-height: auto;
+  }
+  .login-left {
+    display: none; 
+  }
+  .login-right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 40px 20px;
+    height: auto;
+  }
+}
+
+/* -------------------------------------- */
+
+/* assets/style.css */
+
+/* Cart Page Wrapper */
+.cart-page-wrapper {
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px 0;
+  min-height: calc(100vh - 160px);
+}
+
+.cart-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Breadcrumb */
+.cart-breadcrumb {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.current-page {
+  color: #000;
+  font-weight: 500;
+}
+
+/* Cart Table */
+.cart-table-wrapper {
+  margin-bottom: 32px;
+}
+
+.custom-cart-table {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-cart-table .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 16px 8px;
+}
+
+.custom-cart-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 16px 8px;
+}
+
+.custom-cart-table .ant-table-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+/* Product Cell */
+.product-cell-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cart-delete-icon {
+  color: #ff4d4f;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 16px;
+}
+
+.cart-delete-icon:hover {
+  color: #ff7875;
+}
+
+.cart-product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.cart-product-name {
+  font-size: 16px;
+  color: #000;
+}
+
+/* Price and Subtotal Text */
+.price-text {
+  font-size: 16px;
+  color: #000;
+}
+
+.subtotal-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Quantity Input */
+.quantity-input {
+  width: 80px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.quantity-input .ant-input {
+  text-align: center;
+}
+
+/* Cart Actions */
+.cart-actions-row {
+  margin-bottom: 48px;
+}
+
+.return-shop-btn,
+.update-cart-btn {
+  border: 1px solid #d9d9d9;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #000;
+  background: #fff;
+}
+
+.return-shop-btn:hover,
+.update-cart-btn:hover {
+  border-color: #40a9ff;
+  color: #40a9ff;
+}
+
+/* Cart Summary Row */
+.cart-summary-row {
+  margin-bottom: 48px;
+}
+
+/* Coupon Section */
+.coupon-section {
+  display: flex;
+  align-items: flex-start;
+}
+
+.coupon-space {
+  width: 100%;
+}
+
+.coupon-input {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.coupon-input .ant-input {
+  height: 100%;
+}
+
+.apply-coupon-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.apply-coupon-btn:hover {
+  background-color: #ff7875;
+  color: white;
+}
+
+/* Cart Total Section */
+.cart-total-section {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-total-card {
+  border: 2px solid #000000;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+}
+
+.cart-total-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+.cart-total-title {
+  margin: 0 !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #000 !important;
+  text-align: left;
+}
+
+.cart-total-content {
+  padding: 24px;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #000000;
+}
+
+.total-line:last-child {
+  border-bottom: none;
+}
+
+.shipping-line {
+  border-bottom: 1px solid #000000;
+}
+
+.final-total {
+  border-bottom: none;
+  padding-bottom: 20px;
+}
+
+.total-label {
+  font-size: 16px;
+  color: #000;
+}
+
+.total-value {
+  font-size: 16px;
+  color: #000;
+}
+
+.final-total .total-label,
+.final-total .total-value {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  height: 48px;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  text-transform: none;
+}
+
+.checkout-btn:hover {
+  background-color: #ff7875;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cart-content-container {
+    padding: 0 16px;
+  }
+  
+  .cart-actions-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .return-shop-btn,
+  .update-cart-btn {
+    width: 100%;
+  }
+  
+  .coupon-section {
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+  
+  .coupon-space {
+    width: 100%;
+    gap: 12px !important;
+    display: flex;
+    justify-content: center;
+    
+      
+  }
+  
+  .coupon-input {
+    width: 100%;
+  }
+  
+  .apply-coupon-btn {
+    width: 100%;
+
+  }
+  
+  .cart-total-section {
+    display: flex;
+    justify-content: center;  }
+  
+  .cart-total-card {
+    max-width: 100%;
+  }
+  
+  .product-cell-content {
+    flex-wrap: wrap;
+  }
+  
+  .cart-product-name {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-page-wrapper {
+    padding: 20px 0;
+  }
+  
+  .custom-cart-table .ant-table-thead > tr > th,
+  .custom-cart-table .ant-table-tbody > tr > td {
+    padding: 12px 4px;
+  }
+  
+  .cart-product-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+  
+  .cart-delete-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .cart-total-header {
+    padding: 16px 20px;
+  }
+  
+  .cart-total-content {
+    padding: 20px;
+  }
+}
