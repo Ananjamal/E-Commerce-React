@@ -1330,7 +1330,7 @@
   align-items: center;
   padding: 12px 0;
   border-bottom: 1px solid #000000;
-}
+  }
 
 .total-line:last-child {
   border-bottom: none;
@@ -1464,5 +1464,557 @@
   
   .cart-total-content {
     padding: 20px;
+  }
+}
+
+
+
+/* --------------------------- */
+/* --- Checkout Page Layout and Spacing --- */
+.checkout-page-wrapper {
+  padding: 50px 0;
+  min-height: calc(100vh - 200px); 
+}
+
+.checkout-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb */
+.checkout-breadcrumb {
+  display: block;
+  margin-bottom: 40px; 
+  color: #6c757d;
+}
+
+.checkout-breadcrumb .current-page {
+  color: #000000;
+  font-weight: 500;
+}
+
+.checkout-title {
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    margin-bottom: 40px !important; 
+}
+
+/* --- Left Column: Billing Form Styles (NEW INPUT STYLE) --- */
+.billing-details-col {
+    padding-right: 20px;
+}
+
+/* Form Items Spacing */
+.billing-form .ant-form-item {
+    margin-bottom: 30px !important; /* Slightly larger spacing for the new input look */
+}
+
+/* Input Field Style: Exact match for the new image: light gray background, white border, no shadow */
+.checkout-input.ant-input {
+    background-color: #f5f5f5 !important; /* Light Gray Background */
+    border: 1px solid #ffffff !important; /* White Border (or very light gray) */
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    padding: 10px 15px !important; 
+    font-size: 16px !important;
+    height: 50px; /* Defined height */
+}
+
+/* Checkbox Style */
+.checkout-checkbox-item {
+    margin-top: 20px !important;
+}
+
+.checkout-checkbox .ant-checkbox-inner {
+    border-color: #000000 !important;
+    border-radius: 4px; /* Slightly rounded checkbox */
+}
+.checkout-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #db4444; 
+    border-color: #db4444 !important;
+}
+.checkout-checkbox span {
+    font-size: 16px;
+    color: #000000;
+}
+
+
+/* --- Right Column: Order Summary & Payment Styles --- */
+.order-summary-box {
+    padding: 30px; 
+    border: 1px solid #ced4da; 
+    border-radius: 4px;
+}
+
+/* Product Review List */
+.product-review-list {
+    margin-bottom: 30px;
+}
+
+.product-review-item {
+    margin-bottom: 25px; /* Tighter spacing between products */
+}
+
+.product-review-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Totals section */
+.order-totals {
+    margin-bottom: 40px;
+}
+
+.order-totals .total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ced4da;
+    font-size: 16px;
+}
+
+.order-totals .shipping-line-final {
+    margin-bottom: 20px; 
+}
+
+.order-totals .final-total {
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-top: 10px; 
+}
+
+/* Payment Options */
+.payment-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.payment-row {
+    width: 100%;
+}
+
+.payment-radio .ant-radio-inner {
+    border-color: #000000 !important; 
+}
+
+.payment-radio .ant-radio-checked .ant-radio-inner {
+    border-color: #db4444 !important; 
+}
+.payment-radio .ant-radio-checked .ant-radio-inner::after {
+    background-color: #db4444; 
+}
+
+/* Payment Methods Image (NEW POSITIONING) */
+.payment-methods-img {
+    width: 250px;
+    height: 25px;
+    object-fit: cover;
+    
+}
+
+/* Coupon Input and Apply Button */
+.coupon-and-order-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.coupon-input.ant-input {
+    height: 50px;
+    border: 1px solid #000000; 
+    border-radius: 4px;
+    padding: 0 15px;
+    width: 250px; /* Fixed width as seen in the image */
+}
+
+.apply-coupon-btn.ant-btn {
+    background-color: #db4444; 
+    color: #ffffff;
+    border-color: #db4444;
+    height: 50px;
+    padding: 0 48px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+/* Final Place Order Button */
+.place-order-btn.ant-btn {
+    background-color: #db4444; 
+    color: #ffffff;
+    border-color: #db4444;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    width: 200px; 
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .billing-details-col {
+        padding-right: 10px;
+    }
+    .order-summary-col {
+        margin-top: 40px; 
+        padding-left: 10px;
+    }
+    
+    .coupon-and-order-btn .coupon-space {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .coupon-input.ant-input {
+        width: 100%;
+    }
+    .apply-coupon-btn.ant-btn {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+/* -------------------------------------------------- */
+/* --- Global Product Page Layout & Breadcrumb --- */
+/* ====== General Page Layout ====== */
+.product-container {
+  padding: 60px 80px;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    padding: 30px 20px;
+  }
+}
+
+/* ====== Product Views Section ====== */
+.views-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.view-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.view-item:hover {
+  transform: scale(1.05);
+}
+
+.view-thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+
+.view-item.active .view-thumb {
+  border-color: #1890ff;
+}
+
+/* ====== Main Product Image ====== */
+.center-image {
+  text-align: center;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #fafafa;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .main-image {
+    height: 300px;
+  }
+}
+
+/* ====== Product Details ====== */
+.price {
+  color: #d4380d;
+  font-weight: 600;
+}
+
+.product-options {
+  margin: 20px 0;
+}
+
+.color-options {
+  margin-top: 8px;
+}
+
+.color-circle {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.color-circle.red {
+  background-color: #ff4d4f;
+}
+
+.color-circle.gray {
+  background-color: #595959;
+}
+
+.size-btn {
+  min-width: 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+
+.size-btn:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+/* ====== Quantity and Buy Section ====== */
+.quantity-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.qty-input {
+  width: 60px;
+  text-align: center;
+}
+
+.buy-btn {
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.buy-btn:hover {
+  background-color: #1890ff;
+}
+
+/* ====== Delivery Info Section ====== */
+.delivery-info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.delivery-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.delivery-card svg {
+  font-size: 20px;
+  color: #1890ff;
+}
+
+/* ====== Related Products Section ====== */
+.related-section {
+  margin-top: 80px;
+}
+
+.related-section h4 {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+/* Card Base Style */
+.related-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.related-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== Image Container (UPDATED for position: relative) ====== */
+.related-img-container {
+  position: relative; /* Essential for positioning the icon */
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+
+.related-img-container img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.related-card:hover .related-img-container img {
+  transform: scale(1.05);
+}
+
+/* ====== NEW FAVORITE ICON STYLES ====== */
+.favorite-icon {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  z-index: 10;
+  
+  /* Styling */
+  cursor: pointer;
+  font-size: 20px; /* Adjusted size */
+  color: #8c8c8c;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 32px; /* Adjusted size */
+  height: 32px; /* Adjusted size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.favorite-icon:hover {
+  color: #db4444;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.eye-icon {
+  position: absolute;
+  top: 60px;
+  right: 35px;
+  z-index: 10;
+  
+  /* Styling */
+  cursor: pointer;
+  font-size: 20px; /* Adjusted size */
+  color: #8c8c8c;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 32px; /* Adjusted size */
+  height: 32px; /* Adjusted size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.eye-icon:hover {
+  color: #db4444;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== Add To Cart Button (Below Image) ====== */
+/* 1. Hide the Add To Cart overlay by default */
+.related-card .hover-overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 10px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  padding: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+/* 2. Show the Add To Cart overlay when the card is hovered */
+.related-card:hover .hover-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hover-overlay:hover {
+  background-color: #1890ff;
+}
+
+/* ====== Discount Tag ====== */
+.discount-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #db4444 !important;
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-weight: 500;
+}
+
+/* ====== Product Info ====== */
+.related-card h5 {
+  font-weight: 500;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #000;
+}
+
+.related-card .price {
+  color: #db4444;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.related-card .ant-typography-delete {
+  color: #8c8c8c !important;
+  font-size: 14px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 992px) {
+  .views-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .view-thumb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .related-img-container img {
+    height: 180px;
+  }
+
+  .hover-overlay {
+    font-size: 14px;
+    padding: 8px 0;
   }
 }
