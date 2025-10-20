@@ -7,6 +7,11 @@ import {
   EyeOutlined,
 } from "@ant-design/icons";
 const { Title, Text } = Typography;
+import {
+  fetchCartItemsRequest,
+  addItemToCartRequest,
+  
+} from "../redux/cart/cartActions"
 
 import "../assets/style.css";
 

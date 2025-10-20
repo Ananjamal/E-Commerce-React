@@ -1,77 +1,93 @@
-import { Row, Col, Card, Typography, Button, Tag, Rate } from "antd";
-import { HeartOutlined, EyeOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Row, Col, Card, Typography, Button, Rate, message } from "antd";
+import { HeartOutlined, EyeOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import "../assets/style.css";
+import { fetchProductsRequest } from "../redux/products/productActions";
+import { addItemToCartRequest, fetchCartItemsRequest } from "../redux/cart/cartActions";
 
 const { Title, Text } = Typography;
 
-const products = [
-  { 
-    id: 1, 
-    name: "Breed Dry Dog Food", 
-    price: 100, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 35
-  },
-  { 
-    id: 2, 
-    name: "CANON EOS DSLR Camera", 
-    price: 360, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 95
-  },
-  { 
-    id: 3, 
-    name: "ASUS FHD Gaming Laptop", 
-    price: 700, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 325
-  },
-  { 
-    id: 4, 
-    name: "Curology Product Set", 
-    price: 500, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 145
-  },
-  { 
-    id: 5, 
-    name: "Kids Electric Car", 
-    price: 960, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 65
-  },
-  { 
-    id: 6, 
-    name: "Jr. Zoom Soccer Cleats", 
-    price: 160, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 35
-  },
-  { 
-    id: 7, 
-    name: "GPII Shooter USB Gamepad", 
-    price: 660, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 55
-  },
-  { 
-    id: 8, 
-    name: "Quilted Satin Jacket", 
-    price: 660, 
-    rating: 4, 
-    img: "https://files.refurbed.com/ii/iphone-14-pro-1662623063.jpg",
-    reviews: 55
-  },
-];
+const ExploreProducts = () => {
+  const dispatch = useDispatch();
+  const { products, loading, error } = useSelector(state => state.products);
+  const { items: cartData, loading: cartLoading } = useSelector(state => state.cart);
 
-const ExplorProducts = () => {
+  useEffect(() => {
+    dispatch(fetchProductsRequest());
+    dispatch(fetchCartItemsRequest());
+  }, [dispatch]);
+
+  const handleAddToCart = (product) => {
+    // Get current cart products or empty array
+    const currentProducts = cartData?.products || [];
+    
+    // Check if product is already in cart
+    const existingProductIndex = currentProducts.findIndex(item => item.productId === product.id);
+    
+    let updatedProducts;
+    
+    if (existingProductIndex > -1) {
+      // Update quantity if product exists
+      updatedProducts = currentProducts.map((item, index) => 
+        index === existingProductIndex 
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+      message.info(`${product.title} quantity updated in cart!`);
+    } else {
+      // Add new product
+      updatedProducts = [
+        ...currentProducts,
+        {
+          productId: product.id,
+          quantity: 1
+        }
+      ];
+      message.success(`${product.title} added to cart!`);
+    }
+
+    // Prepare cart data for API
+    const cartPayload = {
+      userId: 1,
+      date: new Date().toISOString().split('T')[0],
+      products: updatedProducts
+    };
+
+    console.log("Sending cart data:", cartPayload);
+    dispatch(addItemToCartRequest(cartPayload));
+    
+    // Refresh cart data after adding item
+    setTimeout(() => {
+      dispatch(fetchCartItemsRequest());
+    }, 500);
+  };
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="products-section">
+        <div style={{ textAlign: 'center', padding: '40px' }}>
+          <div>Loading products...</div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <div className="products-section">
+        <div style={{ textAlign: 'center', padding: '40px', color: '#ff4d4f' }}>
+          <div>Error loading products: {error}</div>
+          <Button type="primary" onClick={() => dispatch(fetchProductsRequest())}>
+            Retry
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="products-section">
        <div className="products-header-row">
@@ -84,8 +100,7 @@ const ExplorProducts = () => {
           </div>
 
           <Title level={2} className="flashsales-title">
-              Expolre Our Products
-
+              Explore Our Products
           </Title>
         </Col>
         <Col>
@@ -101,19 +116,33 @@ const ExplorProducts = () => {
             <Card
               hoverable
               className="product-card"
-              cover={<img alt={product.name} src={product.img} />}
-              actions={[<HeartOutlined key="fav" />, <EyeOutlined key="view" />]}
+              cover={<img alt={product.title} src={product.image} />}
+              actions={[
+                <HeartOutlined key="fav" />, 
+                <EyeOutlined key="view" />,
+                <ShoppingCartOutlined 
+                  key="cart" 
+                  onClick={() => handleAddToCart(product)}
+                  style={{ color: '#1890ff' }}
+                />
+              ]}
             >
               <Text className="product-price">${product.price}</Text>
-              <Rate disabled defaultValue={product.rating} className="product-rating" />
-              <Text type="secondary"> ({product.reviews})</Text>
-              <Text className="product-name">{product.name}</Text>
+              <Rate disabled defaultValue={Math.round(product.rating?.rate || 0)} className="product-rating" />
+              <Text type="secondary"> ({product.rating?.count || 0})</Text>
+              <Text className="product-name">{product.title}</Text>
             </Card>
           </Col>
         ))}
       </Row>
+
+      {products.length === 0 && !loading && (
+        <div style={{ textAlign: 'center', padding: '40px' }}>
+          <Text>No products available</Text>
+        </div>
+      )}
     </div>
   );
 };
 
-export default ExplorProducts;
+export default ExploreProducts;

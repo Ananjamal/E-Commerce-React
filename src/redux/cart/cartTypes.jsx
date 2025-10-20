@@ -1,4 +1,6 @@
-// Fetch Items
+// src/redux/cart/cartTypes.js
+
+// Fetch Cart Items
 export const CART_FETCH_ITEMS_REQUEST = "CART_FETCH_ITEMS_REQUEST";
 export const CART_FETCH_ITEMS_SUCCESS = "CART_FETCH_ITEMS_SUCCESS";
 export const CART_FETCH_ITEMS_FAILURE = "CART_FETCH_ITEMS_FAILURE";
