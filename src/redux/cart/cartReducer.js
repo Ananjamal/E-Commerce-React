@@ -28,12 +28,10 @@ export const cartReducer = (state = initialState, action) => {
       console.log("Reducer received cart data:", action.payload);
       return { ...state, items: action.payload, loading: false, error: null };
 
-    // In cartReducer.js - update the CART_ADD_ITEM_SUCCESS case
 case CART_ADD_ITEM_SUCCESS:
-  console.log("Add to cart success:", action.payload);
   return { 
     ...state, 
-    items: action.payload, // Store the entire cart response
+    items: action.payload, 
     loading: false, 
     error: null 
   };

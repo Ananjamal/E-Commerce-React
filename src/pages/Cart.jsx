@@ -17,7 +17,7 @@ const { Title, Text } = Typography;
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { items: cartData, error, loading } = useSelector((state) => state.cart);
+  const { items: cartData , loading } = useSelector((state) => state.cart);
   const { products } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const [couponCode, setCouponCode] = useState("");
@@ -89,14 +89,11 @@ const Cart = () => {
   };
 
   const handleUpdateCart = () => {
-    // Here you would typically dispatch an action to update quantities on server
     message.success('Cart updated successfully');
     console.log('Updated cart items:', localCartItems);
   };
 
   const handleCheckout = () => {
-    // Update cart with current quantities before checkout
-    console.log('Proceeding to checkout with:', localCartItems);
     navigate("/checkout", { state: { cartItems: localCartItems } });
   };
 
